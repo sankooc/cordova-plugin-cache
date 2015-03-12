@@ -4,6 +4,7 @@ import Foundation
     func clear(command: CDVInvokedUrlCommand) {
         println("do clear cache")
         NSURLCache.sharedURLCache().removeAllCachedResponses()
+         self.commandDelegate.sendPluginResult(CDVPluginResult(status: CDVCommandStatus_OK), callbackId:command.callbackId)
     }
     func size(command: CDVInvokedUrlCommand){
         println("get cache size")
